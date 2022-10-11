@@ -1,0 +1,50 @@
+.sidebar {
+    height: 90%;
+    width: 30%;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    background-color: #42525A;
+    padding-top: 10px;
+}
+
+.sidebar a {
+    
+    padding: 8px 8px 8px 8px;
+    left: 30%;
+    right: 30%;
+    color: #edeff1;
+    text-align: center;
+
+}
+
+.sidebar button {
+    border: none;
+    color: white;
+    background-color: #171C1F;
+    padding: 16px 64px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    padding: 16px 128px;
+    font-size: 32px;
+}
+.button1:hover{
+    background-color: #D9AE6A;
+}
+
+.button2 {
+    margin-bottom: auto;
+    padding: 2px 8px;
+    font-size: 16px;
+}
+.button2:hover{
+    background-color: green;
+}
