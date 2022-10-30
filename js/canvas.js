@@ -9,9 +9,12 @@ window.addEventListener("load", () => {
 
 
   let painting = false;
+  ctx.fillStyle ='white'
+
+
 
   function startPosition(e){
-    ctx.moveTo(e.clientX,e.clientY);
+    ctx.moveTo(e.clientX,e.clientY-108);
     painting = true;
   }
 
@@ -23,7 +26,7 @@ window.addEventListener("load", () => {
     if(!painting) return;
     ctx.lineWidth = 10;
     ctx.lineCap = "round";
-    ctx.lineTo(e.clientX,e.clientY);
+    ctx.lineTo(e.clientX,e.clientY-108);
     ctx.stroke();
   }
 

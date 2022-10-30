@@ -10,7 +10,7 @@
 }
 
 .sidebar {
-  display: none;
+  display: flex;
   justify-content: column;
   height: 90%;
   width: 30%;
@@ -22,11 +22,18 @@
   flex-wrap: wrap;
 }
 
+.mainScreen {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  z-index: -1;
+}
+
 .buttonbar {
   display: flex;
   margin-left: 4%;
   height: 7%;
-  width: 90%;
+  width: 10%;
   padding: 0px;
 }
 
