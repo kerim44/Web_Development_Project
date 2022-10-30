@@ -3,6 +3,12 @@
   font-family: "Josefin Sans";
 }
 
+.h1{
+  background-color:green;
+  overflow: hidden;
+}
+
+
 #title {
   color: white;
   text-align: center;
@@ -20,20 +26,21 @@
   background-color: #87c1ff;
   padding-top: 1%;
   flex-wrap: wrap;
+  z-index:2;
 }
 
-.mainScreen {
-  display: flex;
-  position: fixed;
+#mainScreen {
+  display : flex;
+  position:fixed;
   background-color: white;
-  z-index: -1;
+  z-index: 0;
 }
 
 .buttonbar {
   display: flex;
   margin-left: 4%;
   height: 7%;
-  width: 10%;
+  width: 90%;
   padding: 0px;
 }
 
@@ -69,7 +76,7 @@
 .button2 {
   align-self: flex-end;
   height: 10%;
-  flex: 0 1 10%;
+  flex: 0 1 20%;
 }
 
 .button2:hover {
@@ -80,7 +87,7 @@
   height: 500px;
   display: flex;
   flex-direction: column;
-  padding: 5px;
+
   background-color: #87c1ff;
   margin-left: 95%;
   justify-content: space-between;
@@ -115,6 +122,7 @@
 
 /* The popup form - hidden by default */
 .form-popup {
+  color: red;
   display: none;
   position: fixed;
   bottom: 0;
@@ -133,7 +141,7 @@
 /* Full-width input fields */
 .form-container input[type="text"],
 .form-container input[type="password"] {
-  width: 100%;
+  width: 90%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
