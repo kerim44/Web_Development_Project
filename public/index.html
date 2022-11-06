@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin Sans"
+      rel="stylesheet"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHAT</title>
@@ -16,8 +20,16 @@
         <button class="button button1">CHAT</button>
       </div>
       <div class="bottombar">
-        <button class="button button2">SEND</button>
-        <div class="chat"></div>
+        <div class="chat-wrap">
+          <h2>Chat</h2>
+          <div id="chat-window">
+            <div id="output"></div>
+            <div id="feedback"></div>
+          </div>
+          <input type="text" id="sender" placeholder="Name">
+          <input type="text" id="message" placeholder="Message">
+          <button class="button button2" id="button2">SEND</button>
+        </div>
       </div>
     </div>
 
@@ -26,37 +38,31 @@
 
     </div>
 
-    <div class="editbar">
+    <!-- <div class="editbar">
       <button class="button edit1">1</button>
       <button class="button edit1">2</button>
       <button class="button edit1">3</button>
       <button class="button edit1">4</button>
       <button class="button edit1">5</button>
-    </div>
-
+    </div> -->
+    
     <!-- A button to open the popup form -->
     <button class="open-button" onclick="openForm()">Login</button>
 
     <!-- The form -->
     <div class="form-popup" id="myForm">
       <form action="/action_page.php" class="form-container">
-        <input type="text" placeholder="Enter Email" name="email" required />
+        <input type="text" placeholder="Enter Username" name="username" required />
+        <input type="roomid" placeholder="Enter RoomID" name="roomid" required/>
 
-        <input
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          required
-        />
-
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn">Enter</button>
         <button type="button" class="btn cancel" onclick="closeForm()">
           Close
         </button>
       </form>
     </div>
     <!--<script src="canvas.js"></script>-->
-
+    <script src="chat.js" charset="uft-8"></script>
     <script src="app.js" charset="uft-8"></script>
 </body>
 </html>

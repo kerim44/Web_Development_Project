@@ -15,6 +15,9 @@ io.on('connection', (socket) => {
         console.log(number1 + "---" + number2),
         io.emit('drawListen', number1, number2)
     })
+    socket.on('chat',data=>{
+        io.sockets.emit('chat',data)
+    })
 
 
 })
