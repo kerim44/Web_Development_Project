@@ -18,7 +18,8 @@ window.addEventListener("load", () => {
     let painting = false;
   
     function startPosition(e) {
-      ctx.moveTo(e.clientX - b, e.clientY - a);
+      socket.emit('drawStart', e.clientX, e.clientY, {
+      })
       painting = true;
     }
   
@@ -31,6 +32,10 @@ window.addEventListener("load", () => {
       socket.emit( 'drawEvent', e.clientX, e.clientY, {
       })
     }
+
+    socket.on('drawStartListen', (pos1, pos2) => {
+      ctx.moveTo(pos1 - b, pos2 - a);
+    })
 
     socket.on('drawListen', (number1, number2) => {
       ctx.lineWidth = 2;
