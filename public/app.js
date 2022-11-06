@@ -63,19 +63,18 @@ const feedback = document.getElementById('feedback')
 const button2 = document.getElementById('button2')
 
 button2.addEventListener('click',() => {
-  socket.emit('chat',{
+  
+  if(message.value!='' && sender.value !=''){
+    socket.emit('chat',{
     message:message.value,
     sender:sender.value
-  })
+    
+  })}
 })
 socket.on('chat', data =>{
-  console.log('sa');
-  output.innerHTML +='    <p><strong>'+ data.sender +' : </strong>'+data.message+'</p>'
+  output.innerHTML +='<p><strong>'+ data.sender +' : </strong>'+data.message+'</p>'
   message.value = '';
 })
-
-
-
 
   function openForm() {
     document.getElementById("myForm").style.display = "block";
