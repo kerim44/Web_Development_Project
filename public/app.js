@@ -3,20 +3,24 @@ const socket =  io.connect('http://localhost:3000')
 
 window.addEventListener("load", () => {
 
-    const axisX = 12;
-    const axisY = 12;
-
+  //Calibration of Canvas
     var a = window.innerHeight * 0.118;
     var b = window.innerWidth * 0.0055;
   
+  //Setting up Canvas Constants
     const canvas = document.querySelector("#canvas");
     const ctx = canvas.getContext("2d");
     
     canvas.height = window.innerHeight;
     canvas.width = 1770;
   
+  //Setting up canvas Veraibles
     let painting = false;
+    let drawColor = "green";
+    let drawThickness = 2;
+    var delayInMilliseconds = 1;
   
+  //Drawing Functions
     function startPosition(e) {
       socket.emit('drawStart', e.clientX, e.clientY, {
       })
@@ -29,8 +33,11 @@ window.addEventListener("load", () => {
   
     function draw(e) {
       if (!painting) return;
-      socket.emit( 'drawEvent', e.clientX, e.clientY, {
-      })
+      setTimeout(function() {
+        socket.emit( 'drawEvent', e.clientX, e.clientY, {
+        })
+      }, delayInMilliseconds);
+      
     }
 
     socket.on('drawStartListen', (pos1, pos2) => {
@@ -38,29 +45,27 @@ window.addEventListener("load", () => {
     })
 
     socket.on('drawListen', (number1, number2) => {
-      ctx.lineWidth = 2;
+      ctx.lineWidth = drawThickness;
       ctx.lineCap = "round";
       ctx.lineTo(number1 - b, number2 - a);
       ctx.stroke();
-      ctx.strokeStyle = "green";
-      
+      ctx.strokeStyle = drawColor;    
     })
 
-    function drawServer(axisX, axisY) {
-      if (!painting) return;
-      ctx.lineWidth = 2;
+    socket.on('firstConnectionDraw',(n1,n2) => {
+      ctx.lineWidth = drawThickness;
       ctx.lineCap = "round";
-      ctx.lineTo(axisX - b, axisY - a);
+      ctx.lineTo(n1 - b, n2 - a);
       ctx.stroke();
-      ctx.strokeStyle = "green";
-    }
+      ctx.strokeStyle = drawColor;  
+    })
 
-  
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishedPosition);
     canvas.addEventListener("mousemove", draw);
   });
   
+// Messaging functions
 const sender = document.getElementById('sender')
 const message = document.getElementById('message')
 const output = document.getElementById('output')
@@ -72,8 +77,7 @@ button2.addEventListener('click',() => {
   if(message.value!='' && sender.value !=''){
     socket.emit('chat',{
     message:message.value,
-    sender:sender.value
-    
+    sender:sender.value   
   })}
 })
 socket.on('chat', data =>{
@@ -81,6 +85,7 @@ socket.on('chat', data =>{
   message.value = '';
 })
 
+//Pop-up Functions
   function openForm() {
     document.getElementById("myForm").style.display = "block";
   }
