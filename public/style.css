@@ -17,7 +17,7 @@
   .sidebar {
     /*display: flex;
     justify-content: column;*/
-    height: 90%;
+    height: 83%;
     width: 30%;
     position: absolute;
     top: 13%;
@@ -25,6 +25,7 @@
     padding:10px;
     background-color: #87c1ff;
     z-index: 2;
+    border-radius: 10px;
   }
   
   h2{
@@ -61,6 +62,7 @@
   #chat-window{
     overflow-y: auto;
     max-height: 87%;
+
   }
 
   #output p{
@@ -89,6 +91,7 @@
     font-size: 20px;
     transition-duration: 0.4s;
     cursor: pointer;
+    
   }
   
   .button1 {
@@ -103,6 +106,7 @@
   .button2 {
     bottom: 10%;
     align-items: flex-end;
+    border-radius: 10px;
   }
   
   .button2:hover {
@@ -144,6 +148,7 @@
     bottom: 23px;
     right: 28px;
     width: 280px;
+    border-radius: 30px;
   }
   
   /* The popup form - hidden by default */
@@ -156,6 +161,7 @@
     border: 3px solid #f1f1f1;
     z-index: 9;
     opacity: 0.7;
+    border-radius: 10px;
   }
   
   /* Add styles to the form container */

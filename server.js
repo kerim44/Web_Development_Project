@@ -70,16 +70,13 @@ io.on('connection', (socket) => {
     }
 
     socket.on('drawStart', (pos1, pos2) =>{
-        console.log("draw Start  x=" + pos1 + "  y=" + pos2)
         io.emit('drawStartListen',pos1,pos2)
     })
 
     socket.on('drawEvent', (number1, number2) => {
         llist.add(number1);
         llist.add(number2);
-        llist.printList();
         cnt++;
-        console.log(number1 + "---" + number2 + "            counter =" + cnt),
         io.emit('drawListen', number1, number2)
     })
     socket.on('chat',data=>{
