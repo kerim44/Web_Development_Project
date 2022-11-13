@@ -79,9 +79,25 @@ io.on('connection', (socket) => {
         cnt++;
         io.emit('drawListen', number1, number2)
     })
+
     socket.on('chat',data=>{
         io.sockets.emit('chat',data)
     })
-    
 
+    socket.on('chatToRoom',data =>{
+        io.sockets.to(room).emit('chatToRoom',data);
+    })
+
+    socket.on("upload", (file, callback)=>{
+        console.log(file);
+    })
+    
+    socket.on('clear',() =>{
+        var curr = llist.head;
+        while (curr) {
+            curr.element = 0;
+            curr = curr.next.next;
+        }
+        
+    })
 })

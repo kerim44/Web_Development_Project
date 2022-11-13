@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
     const ctx = canvas.getContext("2d");
     
     canvas.height = window.innerHeight;
-    canvas.width = 1770;
+    canvas.width = 2000;
   
   //Setting up canvas Veraibles
     let painting = false;
@@ -62,28 +62,51 @@ window.addEventListener("load", () => {
 
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishedPosition);
-    canvas.addEventListener("mousemove", draw);
-  });
-  
+    canvas.addEventListener("mousemove", draw);    
+});
+
+
+
+
 // Messaging functions
 const sender = document.getElementById('sender')
 const message = document.getElementById('message')
 const output = document.getElementById('output')
 const feedback = document.getElementById('feedback')
 const button2 = document.getElementById('button2')
+const clear = document.getElementById('clear')
 
 button2.addEventListener('click',() => {
-  
   if(message.value!='' && sender.value !=''){
     socket.emit('chat',{
     message:message.value,
     sender:sender.value   
   })}
 })
+
+
+//Clear Function
+clear.addEventListener('click',() => {
+  socket.emit('clear')
+})
+
+
 socket.on('chat', data =>{
   output.innerHTML +='<p><strong>'+ data.sender +' : </strong>'+data.message+'</p>'
   message.value = '';
 })
+
+socket.on('chatToRoom',data =>{
+  output.innerHTML +='<p><strong>'+ data.sender +' : </strong>'+data.message+'</p>'
+  io.sockets.to("room1").emit('chatToRoom',data);
+  message.value = '';
+})
+
+function upload(files){
+  socket.emit("upload", files[0], (status)=>{
+    console.log(status);
+  });
+}
 
 //Pop-up Functions
   function openForm() {
@@ -94,3 +117,14 @@ socket.on('chat', data =>{
     document.getElementById("myForm").style.display = "none";
   }
   
+//Pop-up Sidebar
+  function openSidebar() {
+    document.getElementById("sidebar").style.display = "block";
+    document.getElementById("open-sidebar").style.display = "none";
+  }
+  
+  function closeSidebar() {
+    document.getElementById("sidebar").style.display = "none";
+    document.getElementById("open-sidebar").style.display = "block";
+  }
+
