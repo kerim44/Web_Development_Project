@@ -124,22 +124,42 @@ function upload(files){
 }
 
 //Pop-up Functions
-  function openForm() {
-    document.getElementById("myForm").style.display = "block";
-  }
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
   
-  function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-  }
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
   
 //Pop-up Sidebar
-  function openSidebar() {
-    document.getElementById("sidebar").style.display = "block";
-    document.getElementById("open-sidebar").style.display = "none";
-  }
+function openSidebar() {
+  document.getElementById("sidebar").style.display = "block";
+  document.getElementById("open-sidebar").style.display = "none";
+}
   
-  function closeSidebar() {
-    document.getElementById("sidebar").style.display = "none";
-    document.getElementById("open-sidebar").style.display = "block";
+function closeSidebar() {
+  document.getElementById("sidebar").style.display = "none";
+  document.getElementById("open-sidebar").style.display = "block";
+}
+
+
+function codeBtn(){
+  if(document.getElementById("codeBtn").style.backgroundColor != "darkorange"){
+    document.getElementById("codeBtn").style.backgroundColor = "darkorange";
+    document.getElementById("chatBtn").style.backgroundColor = "rgb(0, 0, 35)";
+    document.getElementById("chat-wrap").style.display = "none";
+    document.getElementById("code-wrap").style.display = "block";
+
   }
 
+}
+
+function chatBtn(){
+  if(document.getElementById("chatBtn").style.backgroundColor != "darkorange"){
+    document.getElementById("chatBtn").style.backgroundColor = "darkorange";
+    document.getElementById("codeBtn").style.backgroundColor = "rgb(0, 0, 35)";
+    document.getElementById("chat-wrap").style.display = "block";
+    document.getElementById("code-wrap").style.display = "none";
+  }
+}

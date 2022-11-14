@@ -19,13 +19,13 @@
     <div class="sidebar" id ="sidebar">
       <div class="buttonbar">
         <!-- TOP BUTTONBAR -->
-        <button class="button button1">CODE</button>
-        <button class="button button1">CHAT</button>
+        <button class="button button1" id="codeBtn" onclick ="codeBtn()">CODE</button>
+        <button class="button button1" id="chatBtn" onclick="chatBtn()">CHAT</button>
         <button class="button button1" onclick="closeSidebar()">CLOSE SIDEBAR</button>
       </div>
       <div class="bottombar">
         <!-- CHAT -->
-        <div class="chat-wrap">
+        <div class="chat-wrap" id="chat-wrap">
           <h2>Chat</h2>
           <div id="chat-window">           
             <div id="output"></div>
@@ -35,10 +35,14 @@
           <input type="text" id="sender" placeholder="Name" name="sender" required>
           <input type="text" id="message" placeholder="Message" name="message" required>
           <!-- UPLOAD -->
+          <button class="button button2" id="button2">SEND</button>
           <input onChange="upload(this.files) "type="file" id="dog" />
           <script src="../server.js"></script>    
         </div>
-      <button class="button button2" id="button2">SEND</button>
+        <!-- CODE -->
+        <div class ="code-wrap" id="code-wrap">
+          <button class="button button2" id="button3">SEND2</button>
+        </div>
       </div>
     </div>
     

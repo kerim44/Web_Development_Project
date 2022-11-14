@@ -111,7 +111,7 @@
     align-items: flex-end;
     border-radius: 10px;
     margin-top: 80%;
-    margin-left:24%;
+    margin-left:10%;
     position:fixed;
   }
   
@@ -119,6 +119,9 @@
     background-color: darkorange;
   }
   
+  #chatBtn{
+    background-color: darkorange;
+  }
   .editbar {
     height: 500px;
     display: flex;
@@ -173,6 +176,19 @@
   .dog{
     width: auto;
     font-size: 5px;
+  }
+
+  .code-wrap{
+    display:none;
+  }
+
+  #button3{
+    bottom: 10%;
+    align-items: flex-end;
+    border-radius: 10px;
+    margin-top: 80%;
+    margin-left:10%;
+    position:fixed;
   }
 
   /*
