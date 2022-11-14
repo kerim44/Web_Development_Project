@@ -1,3 +1,4 @@
 # Web_Development_Project
-Deneme.
-xd
+
+Ortak çizim, sohbet ve kodlama yoluyla kooperatif çalışmanıza yardımcı olmak amacıyla yapılmakta olan bir web sitesi.
+
