@@ -93,7 +93,7 @@ clear.addEventListener('click',() => {
 
 socket.on('chat', data =>{
   output.innerHTML +='<p><strong>'+ data.sender +' : </strong>'+data.message+'</p>'
-  message.value = '';
+  //message.value = '';
 })
 
 socket.on('chatToRoom',data =>{
