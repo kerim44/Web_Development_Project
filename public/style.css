@@ -5,12 +5,12 @@
   }
   
   .h1 {
-    background-color: green;
+    background-color: darkorange;
     overflow: hidden;
   }
   
   #title {
-    color: white;
+    color : white;
     text-align: center;
     font-size: xxx-large;
   }
@@ -24,7 +24,7 @@
     top: 13%;
     left:0;
     padding:10px;
-    background-color: #87c1ff;
+    background-color: darkorange;
     z-index: 2;
     border-radius: 10px;
     display:none;
@@ -38,7 +38,7 @@
   #mainScreen {
     display: flex;
     position: fixed;
-    background-color: white;
+    background-color: darkorange;
     z-index: 0;
   }
   
@@ -70,7 +70,7 @@
   #output p{
     font-size:15px ;
     padding:7px ;
-    color:darkgreen;
+    color:darkorange;
   }
   
   #feedback p{
@@ -89,7 +89,7 @@
   .button {
     border: none;
     padding: 10px;
-    color: white;
+    color : white;
     text-align: center;
     font-size: 20px;
     transition-duration: 0.4s;
@@ -102,7 +102,7 @@
   }
   
   .button1:hover {
-    background-color: #87c1ff;
+    background-color: darkorange;
     color: black;
   }
   
@@ -116,7 +116,7 @@
   }
   
   .button2:hover {
-    background-color: green;
+    background-color: darkorange;
   }
   
   .editbar {
@@ -124,7 +124,7 @@
     display: flex;
     flex-direction: column;
   
-    background-color: #87c1ff;
+    background-color: darkorange;
     margin-left: 95%;
     justify-content: space-between;
   }
@@ -136,12 +136,12 @@
   }
   
   .edit1:hover {
-    background-color: #87c1ff;
+    background-color: darkorange;
   }
 
   .open-sidebar {
-    background-color: #87c1ff;
-    color: white;
+    background-color: darkorange;
+    color : white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
@@ -156,8 +156,8 @@
   }
 
   .clear {
-    background-color: green;
-    color: white;
+    background-color: darkorange;
+    color : white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
@@ -181,8 +181,8 @@
   
   /* Button used to open the contact form - fixed at the bottom of the page */
   .open-button {
-    background-color: #87c1ff;
-    color: white;
+    background-color: darkorange;
+    color : white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
@@ -211,7 +211,7 @@
   .form-container {
     max-width: 300px;
     padding: 10px;
-    background-color: white;
+    background-color: darkorange;
   }
   
   /* Full-width input fields */
@@ -234,7 +234,7 @@
   /* Set a style for the submit/login button */
   .form-container .btn {
     background-color: #04aa6d;
-    color: white;
+    color : white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;

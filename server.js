@@ -98,5 +98,6 @@ io.on('connection', (socket) => {
             curr.element = 0;
             curr = curr.next.next;
         }
+        
     })
 })

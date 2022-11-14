@@ -62,7 +62,21 @@ window.addEventListener("load", () => {
 
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishedPosition);
-    canvas.addEventListener("mousemove", draw);    
+    canvas.addEventListener("mousemove", draw);
+
+/*  const clear = document.getElementById('clear')
+    clear.addEventListener("click", clearCanvas)
+
+    function clearCanvas(){
+      socket.emit('clear')
+      //ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    GEÇİCİ OLARAK ASKIYA ALINDI, CANVAS SİLME ŞEYSİ
+
+     */
+    
+
 });
 
 
@@ -88,7 +102,8 @@ button2.addEventListener('click',() => {
 //Clear Function
 clear.addEventListener('click',() => {
   socket.emit('clear')
-})
+}) 
+
 
 
 socket.on('chat', data =>{
