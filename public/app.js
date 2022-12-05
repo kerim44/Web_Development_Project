@@ -81,6 +81,29 @@ window.addEventListener("load", () => {
 
 
 
+//Clear Function
+
+const clear = document.getElementById('clear')
+
+clear.addEventListener('click',() => {
+  socket.emit('clear')
+})
+
+//Username RoomID functions?
+
+const roomid = document.getElementById('roomo')
+const username = document.getElementById('usero')
+const enterBtn = document.getElementById('entero')
+
+
+enterBtn.addEventListener('click',() =>{
+  if(username.value != '' && roomid.value != '')
+  {
+    console.log('Selamlar '+username.value+','+roomid.value+' numaralı odaya girmek istiyorsun ancak odalar şuan yapım aşamasında. Sabrın için teşekkürler.')
+  }
+
+})
+
 
 // Messaging functions
 const sender = document.getElementById('sender')
@@ -88,7 +111,8 @@ const message = document.getElementById('message')
 const output = document.getElementById('output')
 const feedback = document.getElementById('feedback')
 const button2 = document.getElementById('button2')
-const clear = document.getElementById('clear')
+
+
 
 button2.addEventListener('click',() => {
   if(message.value!='' && sender.value !=''){
@@ -97,13 +121,6 @@ button2.addEventListener('click',() => {
     sender:sender.value   
   })}
 })
-
-
-//Clear Function
-clear.addEventListener('click',() => {
-  socket.emit('clear')
-}) 
-
 
 
 socket.on('chat', data =>{
@@ -125,7 +142,16 @@ function upload(files){
 
 //Pop-up Functions
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  if(document.getElementById("myForm").style.display == "block")
+  {
+    console.log("kapalı")
+    document.getElementById("myForm").style.display = "none";
+  }
+  else
+  {
+    console.log("açık")
+    document.getElementById("myForm").style.display = "block";
+  }
 }
   
 function closeForm() {

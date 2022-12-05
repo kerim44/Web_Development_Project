@@ -41,6 +41,7 @@
         </div>
         <!-- CODE -->
         <div class ="code-wrap" id="code-wrap">
+          <h2>Code</h2>
           <button class="button button2" id="button3">SEND2</button>
         </div>
       </div>
@@ -56,16 +57,16 @@
 
     <!-- The form -->
     <div class="form-popup" id="myForm">
-      <form action="/action_page.php" class="form-container">
-        <input type="text" placeholder="Enter Username" name="username" required />
-        <input type="roomid" placeholder="Enter RoomID" name="roomid" required/>
+      <div class="form-container">
+        <input type="text" id="usero" placeholder="Enter Username" name="username" required />
+        <input type="roomid" id="roomo" placeholder="Enter RoomID" name="roomid" required/>
         
 
-        <button type="submit" class="btn">Enter</button>
+        <button type="submit" id ="entero" class="btn">Enter</button>
         <button type="button" class="btn cancel" onclick="closeForm()">
           Close
         </button>
-      </form>
+      </div>
     </div>
     <!--<script src="canvas.js"></script>-->
     
