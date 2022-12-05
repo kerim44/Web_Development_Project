@@ -93,11 +93,6 @@ io.on('connection', (socket) => {
     })
     
     socket.on('clear',() =>{
-        var curr = llist.head;
-        while (curr) {
-            curr.element = 0;
-            curr = curr.next.next;
-        }
-        
+        llist.head = llist.next      
     })
 })

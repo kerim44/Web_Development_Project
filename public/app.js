@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
     canvas.height = window.innerHeight;
     canvas.width = 2000;
   
-  //Setting up canvas Veraibles
+  //Setting up canvas Variables
     let painting = false;
     let drawColor = "green";
     let drawThickness = 2;
@@ -64,17 +64,17 @@ window.addEventListener("load", () => {
     canvas.addEventListener("mouseup", finishedPosition);
     canvas.addEventListener("mousemove", draw);
 
-/*  const clear = document.getElementById('clear')
+  const clear = document.getElementById('clear')
     clear.addEventListener("click", clearCanvas)
 
     function clearCanvas(){
       socket.emit('clear')
-      //ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#000023"
+      ctx.beginPath()
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-    GEÇİCİ OLARAK ASKIYA ALINDI, CANVAS SİLME ŞEYSİ
-
-     */
+     
     
 
 });
@@ -82,12 +82,12 @@ window.addEventListener("load", () => {
 
 
 //Clear Function
-
+/*
 const clear = document.getElementById('clear')
 
 clear.addEventListener('click',() => {
   socket.emit('clear')
-})
+})*/
 
 //Username RoomID functions?
 

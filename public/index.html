@@ -18,28 +18,28 @@
     <button class="open-sidebar" id="open-sidebar" onclick="openSidebar()">OPEN SIDEBAR</button>
     <div class="sidebar" id ="sidebar">
       <div class="buttonbar">
-        <!-- TOP BUTTONBAR -->
+        <!-- Top Buttonbar -->
         <button class="button button1" id="codeBtn" onclick ="codeBtn()">CODE</button>
         <button class="button button1" id="chatBtn" onclick="chatBtn()">CHAT</button>
         <button class="button button1" onclick="closeSidebar()">CLOSE SIDEBAR</button>
       </div>
       <div class="bottombar">
-        <!-- CHAT -->
+        <!-- Chat Section -->
         <div class="chat-wrap" id="chat-wrap">
           <h2>Chat</h2>
           <div id="chat-window">           
             <div id="output"></div>
             <div id="feedback"></div>
           </div>
-          <!-- SEND TO CHAT -->
+          <!-- Send to chat -->
           <input type="text" id="sender" placeholder="Name" name="sender" required>
           <input type="text" id="message" placeholder="Message" name="message" required>
-          <!-- UPLOAD -->
+          <!-- Upload to chat -->
           <button class="button button2" id="button2">SEND</button>
           <input onChange="upload(this.files) "type="file" id="dog" />
           <script src="../server.js"></script>    
         </div>
-        <!-- CODE -->
+        <!-- Code section -->
         <div class ="code-wrap" id="code-wrap">
           <h2>Code</h2>
           <button class="button button2" id="button3">SEND2</button>
@@ -49,7 +49,6 @@
     
     <div id="mainScreen">
       <canvas id="canvas"> </canvas>
-
     </div>
     
     <!-- A button to open the popup form -->
@@ -68,8 +67,7 @@
         </button>
       </div>
     </div>
-    <!--<script src="canvas.js"></script>-->
-    
+    <!-- Scripts -->
     <script src="chat.js" charset="uft-8"></script>
     <script src="app.js" charset="uft-8"></script>
 </body>
@@ -78,7 +76,7 @@
 
     <!--
     EL FATIHA 
-
+    
     <div class="editbar">
       <button class="button edit1">1</button>
       <button class="button edit1">2</button>
