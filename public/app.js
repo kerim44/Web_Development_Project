@@ -68,11 +68,15 @@ window.addEventListener("load", () => {
     clear.addEventListener("click", clearCanvas)
 
     function clearCanvas(){
-      socket.emit('clear')
+      socket.emit('clear')    
+    }
+
+    socket.on('clearpage',() =>{{
       ctx.fillStyle = "#000023"
       ctx.beginPath()
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
+  })
 
      
     

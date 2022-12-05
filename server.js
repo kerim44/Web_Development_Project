@@ -93,6 +93,7 @@ io.on('connection', (socket) => {
     })
     
     socket.on('clear',() =>{
-        llist.head = llist.next      
+        llist.head = llist.next     
+        io.sockets.emit('clearpage') 
     })
 })
