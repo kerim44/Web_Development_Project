@@ -67,6 +67,7 @@ window.addEventListener("load", () => {
   const clear = document.getElementById('clear')
     clear.addEventListener("click", clearCanvas)
 
+      // Clear function
     function clearCanvas(){
       socket.emit('clear')    
     }
@@ -78,20 +79,7 @@ window.addEventListener("load", () => {
     }
   })
 
-     
-    
-
 });
-
-
-
-//Clear Function
-/*
-const clear = document.getElementById('clear')
-
-clear.addEventListener('click',() => {
-  socket.emit('clear')
-})*/
 
 //Username RoomID functions?
 
@@ -115,7 +103,6 @@ const message = document.getElementById('message')
 const output = document.getElementById('output')
 const feedback = document.getElementById('feedback')
 const button2 = document.getElementById('button2')
-
 
 
 button2.addEventListener('click',() => {
