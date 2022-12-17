@@ -4,8 +4,8 @@ const socket =  io.connect('http://localhost:3000')
 window.addEventListener("load", () => {
 
   //Calibration of Canvas
-    var a = window.innerHeight * 0.118;
-    var b = window.innerWidth * 0.0055;
+    var a = window.innerHeight * 0.16;
+    var b = window.innerWidth * 0.005;
   
   //Setting up Canvas Constants
     const canvas = document.querySelector("#canvas");
@@ -18,11 +18,10 @@ window.addEventListener("load", () => {
     let painting = false;
     let drawColor = "green";
     let drawThickness = 2;
-    var delayInMilliseconds = 1;
   
   //Drawing Functions
     function startPosition(e) {
-      socket.emit('drawStart', e.clientX, e.clientY, {
+      socket.emit('drawStart', e.clientX/window.innerWidth, e.clientY/window.innerHeight, {
       })
       painting = true;
     }
@@ -32,22 +31,19 @@ window.addEventListener("load", () => {
     }
   
     function draw(e) {
-      if (!painting) return;
-      setTimeout(function() {
-        socket.emit( 'drawEvent', e.clientX, e.clientY, {
+      if (!painting) return;  
+        socket.emit( 'drawEvent', e.clientX/window.innerWidth, e.clientY/window.innerHeight, {
         })
-      }, delayInMilliseconds);
-      
     }
 
     socket.on('drawStartListen', (pos1, pos2) => {
-      ctx.moveTo(pos1 - b, pos2 - a);
+      ctx.moveTo(pos1*window.innerWidth -b, pos2*window.innerHeight-a);
     })
 
     socket.on('drawListen', (number1, number2) => {
       ctx.lineWidth = drawThickness;
       ctx.lineCap = "round";
-      ctx.lineTo(number1 - b, number2 - a);
+      ctx.lineTo(number1*window.innerWidth -b, number2*window.innerHeight-a);
       ctx.stroke();
       ctx.strokeStyle = drawColor;    
     })
@@ -55,9 +51,9 @@ window.addEventListener("load", () => {
     socket.on('firstConnectionDraw',(n1,n2) => {
       ctx.lineWidth = drawThickness;
       ctx.lineCap = "round";
-      ctx.lineTo(n1 - b, n2 - a);
+      ctx.lineTo(n1*window.innerWidth -b, n2*window.innerHeight-a);
       ctx.stroke();
-      ctx.strokeStyle = drawColor;  
+      ctx.strokeStyle = drawColor;
     })
 
     canvas.addEventListener("mousedown", startPosition);
