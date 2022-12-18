@@ -4,7 +4,7 @@ const socket =  io.connect('http://localhost:3000')
 window.addEventListener("load", () => {
 
   //Calibration of Canvas
-    var a = window.innerHeight * 0.16;
+    var a = window.innerHeight * 0.12;
     var b = window.innerWidth * 0.005;
   
   //Setting up Canvas Constants
