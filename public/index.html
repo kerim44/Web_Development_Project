@@ -11,8 +11,20 @@
     <title>CHAT</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.js" integrity="sha512-iWPnCISAd/J+ZacwV2mbNLCaPGRrRo5OS81lKTVPtRg1wGTC20Cfmp5Us5RcbLv42QLdbAWl0MI57yox5VecQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="style.css" >
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase.js"></script>
+
+
+    <!-- CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
+
+
+
+    <!-- Firepad -->
+    <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css" />
+    <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
 </head>
-<body>
+<body onload="init">
     <h1 id="title">CodeBoard</h1>
     <button class="clear" id="clear">CLEAR</button>
     <button class="open-sidebar" id="open-sidebar" onclick="openSidebar()">OPEN SIDEBAR</button>
