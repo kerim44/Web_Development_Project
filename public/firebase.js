@@ -1,5 +1,6 @@
 
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 function init() {
   // Initialize Firebase.
@@ -12,4 +13,21 @@ function init() {
     appId: "1:38334752607:web:886d59914780b1cd4db8ea"
   };
   firebase.initializeApp(config);
+
+  //// Get Firebase Database reference.
+  var firepadRef = getExampleRef();
+
+  //// Create ACE
+  var editor = ace.edit("firepad");
+  editor.setTheme("ace/theme/textmate");
+  var session = editor.getSession();
+  session.setUseWrapMode(true);
+  session.setUseWorker(false);
+  session.setMode("ace/mode/javascript");
+
+  //// Create Firepad.
+  var firepad = Firepad.fromACE(firepadRef, editor, {
+    defaultText: '// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
+  });
+  
 }

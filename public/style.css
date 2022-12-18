@@ -272,3 +272,9 @@
     z-index: 10;
   }
   
+
+  .firepad {
+    width: 700px;
+    height: 450px;
+    background-color: #f62;
+  }

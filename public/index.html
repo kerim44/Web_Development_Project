@@ -11,18 +11,24 @@
     <title>CHAT</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.js" integrity="sha512-iWPnCISAd/J+ZacwV2mbNLCaPGRrRo5OS81lKTVPtRg1wGTC20Cfmp5Us5RcbLv42QLdbAWl0MI57yox5VecQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="style.css" >
-    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase.js"></script>
 
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase.js"></script>
 
     <!-- CodeMirror -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
 
-
-
     <!-- Firepad -->
     <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css" />
     <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="chat.js" charset="uft-8"></script>
+    <script src="app.js" charset="uft-8"></script>
+    <script src="firebase.js" charset="uft-8"></script>
+    
 </head>
 <body onload="init">
     <h1 id="title">CodeBoard</h1>
@@ -54,6 +60,7 @@
         <!-- Code section -->
         <div class ="code-wrap" id="code-wrap">
           <h2>Code</h2>
+          <div id="firepad"></div>
           <button class="button button2" id="button3">SEND2</button>
         </div>
       </div>
@@ -79,9 +86,7 @@
         </button>
       </div>
     </div>
-    <!-- Scripts -->
-    <script src="chat.js" charset="uft-8"></script>
-    <script src="app.js" charset="uft-8"></script>
+    
 </body>
 </html>
 
