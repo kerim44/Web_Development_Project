@@ -56,7 +56,7 @@ let socketId = null;
 
 let cnt = 0;
 var llist = new LinkedList();
-
+const fs = require('fs');
 
 io.on('connection', (socket) => {
     socketId = socket.id;
@@ -88,9 +88,13 @@ io.on('connection', (socket) => {
         io.sockets.to(room).emit('chatToRoom',data);
     })
 
-    socket.on("upload", (file, callback)=>{
-        console.log(file);
-    })
+    socket.on("upload", (file, callback) => {
+        console.log(file); // <Buffer 25 50 44 ...>
+        // save the content to the disk, for example
+        fs.writeFile("./upload/image.png", file, (err) => {
+          callback({ message: err ? "failure" : "success" });
+        });
+    });
     
     socket.on('clear',() =>{
         llist.head = llist.next     
