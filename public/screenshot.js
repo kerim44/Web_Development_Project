@@ -1,9 +1,6 @@
 window.addEventListener("load", () => {
-    console.log("we are in")
     const button5 = document.getElementById('save');
-    button5.addEventListener('click',() => {
-        console.log("screenshot baby!");
-        
+    button5.addEventListener('click',() => {        
         const canvas = document.getElementById('canvas');
         const img    = canvas.toDataURL('./image/png');
         var win = window.open();
