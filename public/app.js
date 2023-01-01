@@ -13,6 +13,9 @@ window.addEventListener("load", () => {
     
     canvas.height = window.innerHeight;
     canvas.width = 2000;
+    ctx.fillStyle = "#000023"
+    ctx.beginPath()
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   
   //Setting up canvas Variables
     let painting = false;
