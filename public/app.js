@@ -105,7 +105,9 @@ const button2 = document.getElementById('button2')
 
 
 button2.addEventListener('click',() => {
+  console.log("done");
   if(message.value!='' && sender.value !=''){
+    console.log("done");
     socket.emit('chat',{
     message:message.value,
     sender:sender.value   
@@ -115,6 +117,7 @@ button2.addEventListener('click',() => {
 
 socket.on('chat', data =>{
   output.innerHTML +='<p><strong>'+ data.sender +' : </strong>'+data.message+'</p>'
+  console.log("done");
   //message.value = '';
 })
 
@@ -163,6 +166,8 @@ function closeSidebar() {
 function codeBtn(){
   if(document.getElementById("codeBtn").style.backgroundColor != "darkorange"){
     document.getElementById("codeBtn").style.backgroundColor = "darkorange";
+    document.getElementById("chatBtn").style.color = "darkorange";
+    document.getElementById("codeBtn").style.color = "white";
     document.getElementById("chatBtn").style.backgroundColor = "rgb(0, 0, 35)";
     document.getElementById("chat-wrap").style.display = "none";
     document.getElementById("code-wrap").style.display = "block";
@@ -174,6 +179,8 @@ function codeBtn(){
 function chatBtn(){
   if(document.getElementById("chatBtn").style.backgroundColor != "darkorange"){
     document.getElementById("chatBtn").style.backgroundColor = "darkorange";
+    document.getElementById("codeBtn").style.color = "darkorange";
+    document.getElementById("chatBtn").style.color = "white";
     document.getElementById("codeBtn").style.backgroundColor = "rgb(0, 0, 35)";
     document.getElementById("chat-wrap").style.display = "block";
     document.getElementById("code-wrap").style.display = "none";

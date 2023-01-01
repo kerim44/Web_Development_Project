@@ -14,6 +14,7 @@
 
     <script src="lib/codemirror.js"></script>
     <link rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="theme/dracula.css">
     <script src="mode/javascript/javascript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <!--
@@ -54,16 +55,15 @@
           <!-- Upload to chat -->
           <button class="button button2" id="button2">SEND</button>
           <input onChange="upload(this.files) "type="file" id="dog" />
-          <script src="../server.js"></script>    
+          <script src="../server.js"></script> 
+          <script type="module" src="helper.js"></script>   
         </div>
         <!-- Code section -->
         <div class ="code-wrap" id="code-wrap">
           <h2>Code</h2>
           <textarea id="CodeWindow">
           </textarea>
-
           <button class="button button2" id="button3">SEND2</button>
-
         </div>
       </div>
     </div>
