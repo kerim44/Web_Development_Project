@@ -11,11 +11,20 @@ editor.setSize("520","520");
 editor.getDoc().setValue("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 button3.addEventListener('click',() => {
-  console.log(editor.getValue());
   socket.emit('codeSend',editor.getValue());
 })
 
 socket.on('codeRecive',code=>{
   editor.getDoc().setValue(code);
 })
+/*
+editor.on('change', () => { 
+  
+  setTimeout(function() {
+    console.log("degisim")
+    socket.emit('codeSend',editor.getValue());
+  }, 1000);
+ } )
+*/
 })
+
